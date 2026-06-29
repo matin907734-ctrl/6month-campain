@@ -1,18 +1,9 @@
 class Product:
-    def __init__(self, name, price, stock):
+    def __init__(self, number, name, price, stock):
+        self.number = number
         self.name = name
         self.price = price
         self.stock = stock
 
     def __str__(self):
-        return f"{self.name} - price: {self.price:,}  - stock: {self.stock}"
-        
-# product1 = Product("book ", 200000, 14)
-# product2 = Product("keyboard", 350000, 45)
-# product3 = Product("car", 4550000, 23)
-
-# products = [product1, product2, product3]
-
-# print("the Products List:")
-# for i in products:
-#     print(i)
+        return f"{self.number}. {self.name} | Price: {self.price:,} toman | Stock: {self.stock}"
