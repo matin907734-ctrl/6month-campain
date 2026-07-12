@@ -1,0 +1,83 @@
+[
+    {
+        "order_id": "88922357-525d-4d61-b1f4-15f1f4235dff",
+        "timestamp": "2026-07-12T09:29:42.422362",
+        "items": [
+            {
+                "product": {
+                    "number": "1",
+                    "name": "python book",
+                    "price": 150000,
+                    "stock": 12
+                },
+                "quantity": 1
+            }
+        ],
+        "total_price": 150000,
+        "status": "Pending"
+    },
+    {
+        "order_id": "376d4917-268a-4d03-84d6-13edbfda624b",
+        "timestamp": "2026-07-12T09:30:34.417194",
+        "items": [
+            {
+                "product": {
+                    "number": "1",
+                    "name": "python book",
+                    "price": 150000,
+                    "stock": 12
+                },
+                "quantity": 1
+            },
+            {
+                "product": {
+                    "number": "3",
+                    "name": "headphone",
+                    "price": 540000,
+                    "stock": 8
+                },
+                "quantity": 2
+            },
+            {
+                "product": {
+                    "number": "2",
+                    "name": "mouse",
+                    "price": 320000,
+                    "stock": 30
+                },
+                "quantity": 1
+            }
+        ],
+        "total_price": 1550000,
+        "status": "Pending"
+    },
+    {
+        "order_id": "a616ba17-4d05-4440-9c80-b5ed7dc09e99",
+        "timestamp": "2026-07-12T10:02:31.142610",
+        "items": [
+            {
+                "product": {
+                    "number": "2",
+                    "name": "mouse",
+                    "price": 320000,
+                    "stock": 30
+                },
+                "quantity": 2
+            },
+            {
+                "product": {
+                    "number": "3",
+                    "name": "headphone",
+                    "price": 540000,
+                    "stock": 8
+                },
+                "quantity": 1
+            }
+        ],
+        "total_price": 1180000,
+        "discount_code": "OFF20",
+        "discount_percent": 20,
+        "final_price": 1130000,
+        "status": "Pending"
+    }
+]
