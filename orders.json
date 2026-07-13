@@ -79,5 +79,52 @@
         "discount_percent": 20,
         "final_price": 1130000,
         "status": "Pending"
+    },
+    {
+        "order_id": "bf0e0bb7-6b2b-4646-be3a-c2db6ef3202c",
+        "timestamp": "2026-07-13T20:29:25.714816",
+        "items": [
+            {
+                "product": {
+                    "number": "1",
+                    "name": "python book",
+                    "price": 150000,
+                    "stock": 12
+                },
+                "quantity": 1
+            },
+            {
+                "product": {
+                    "number": "2",
+                    "name": "mouse",
+                    "price": 320000,
+                    "stock": 30
+                },
+                "quantity": 1
+            },
+            {
+                "product": {
+                    "number": "3",
+                    "name": "headphone",
+                    "price": 540000,
+                    "stock": 8
+                },
+                "quantity": 1
+            },
+            {
+                "product": {
+                    "number": "4",
+                    "name": "phone",
+                    "price": 1000,
+                    "stock": 10
+                },
+                "quantity": 1
+            }
+        ],
+        "total_price": 1011000,
+        "discount_code": "OFF10",
+        "discount_percent": 10,
+        "final_price": 961000,
+        "status": "Pending"
     }
 ]
