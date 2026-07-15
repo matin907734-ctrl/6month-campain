@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}My Site{% endblock %}</title>
+</head>
+<body>
+    <nav><a href="/">Home</a> | <a href="/about">About Us</a></nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

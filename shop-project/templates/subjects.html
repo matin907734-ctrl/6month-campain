@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        {% for topic in topics %}
+            <li>{{ topic }}</li>
+        {% endfor %}
+    </ul>
+    {% if topics|length > 3 %}
+        <p>wow you have to many lessons</p>
+    {% else %}
+        <p>it's a short list</p>
+    {% endif %}
+</body>
+</html>
