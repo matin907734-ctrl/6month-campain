@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% if error %}
+ <p style="color: red;">{{ error }}</p>
+{% endif %}
+{% block content %}
+<h1>register form</h1>
+<form method="POST" action="/register">
+    <label>name: </label>
+    <input type="text" name="username" placeholder="import ur name">
+    <br><br>
+    <label>age: </label>
+    <input type="text" name="age" placeholder="import ur age">
+    <br><br>
+    <button type="submit">submit</button>
+</form>
+
+{% endblock %}
