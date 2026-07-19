@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for
 
 app = Flask(__name__)
 app.secret_key = 'یک-رشته-تصادفی-و-مخفی'
+topics = ['Html', 'css', 'javascript', 'python']
 
 @app.route('/')
 def home():
@@ -32,17 +33,18 @@ def register():
 
 @app.route('/search', methods=['GET','POST'])
 def search():
-    if request.method == 'POST':
-        query = request.args.get('q', '')
-        search = request.form.get('Search')
-        if query == search:
-            flash(f'the results for search {search}')
-            return redirect(url_for('search'))
-    return render_template('search.html')
+    query = request.args.get('q', '')
+    results = []
+    if query:
+        results = [item for item in topics if query.lower() in item.lower()]
+        if results:
+            flash(f'found {len(results)} results for {query}')
+        else:
+            flash(f'No results found for {query}')
+    return render_template('search.html', query=query, results=results)
 
 @app.route('/subjects')
 def subjects():
-    topics = ['Html', 'css', 'javascript', 'python']
     return render_template('subjects.html', topics=topics)
 
 if __name__ == '__main__':
