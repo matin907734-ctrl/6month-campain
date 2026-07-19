@@ -22,12 +22,10 @@ def register():
         username = request.form.get('username')
         age = request.form.get('age')
         if not username:
-            flash('you forgot the name')
-            return redirect(url_for('register'))
+            return render_template('register.html', error="you forgot the name ")
         if not age:
-            flash('you forgot the age')
-            return redirect(url_for('register'))
-        flash(f'welcome {username}!you succsed')
+            return render_template('register.html', error="you forgot the age " )
+        flash(f'welcome {username} register succesfull')
         return redirect(url_for('register'))
     return render_template('register.html')
 

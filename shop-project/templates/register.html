@@ -1,7 +1,5 @@
 {% extends 'base.html'%}
-{% if error %}
- <p style="color: red;">{{ error }}</p>
-{% endif %}
+
 {% block content %}
 <h1>register form</h1>
 <form method="POST" action="/register">
@@ -13,5 +11,8 @@
     <br><br>
     <button type="submit">submit</button>
 </form>
+{% if error %}
+ <h4 style="color: red;">{{ error }}<h4/>
+{% endif %}
 
 {% endblock %}
