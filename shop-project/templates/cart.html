@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>your shop list: </h1>
+<!-- <ul>
+    {% for item in items %}
+        <li>{{item}}</li>
+    {% endfor %}
+</ul> -->
+<form action="" id="carts">
+    <div id="cart">
+        <h1>shoe</h1>
+        <p>Price: 200,000</p>
+        <button id="buy"><a href="/add/shoe">buy</a></button>
+    </div>
+    <div id="cart">
+        <h1>TV</h1>
+        <p>Price: 40,000,000</p>
+        <button id="buy"><a href="/add/TV">buy</a></button>
+    </div>
+    <div id="cart">
+        <h1>human</h1>
+        <p>Price: 999,999,099,999</p>
+        <button id="buy"><a href="/add/human">buy</a></button>
+    </div>
+    <div id="cart">
+        <h1>house</h1>
+        <p>Price: 990,334,532,000</p>
+        <button id="buy"><a href="/add/house">buy</a></button>
+    </div>
+</form>
+<button>
+    <a href="/shop-list">shop List</a>
+</button>
+<button>
+    <a href="/clear-cart">clear list</a>
+</button>
+{% endblock %}

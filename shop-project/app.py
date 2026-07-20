@@ -1,12 +1,16 @@
-from flask import Flask, render_template, request, flash, redirect, url_for
+from flask import Flask, render_template, request, flash, redirect, url_for, session, make_response
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.secret_key = 'یک-رشته-تصادفی-و-مخفی'
 topics = ['Html', 'css', 'javascript', 'python']
+# products = ['book', 'mouse', 'headphone', 'pc']
 
 @app.route('/')
 def home():
-    return render_template('index.html', name='matin', age='15')
+    session['visits'] = session.get('visits', 0) + 1
+    return render_template('index.html', name='matin', age='15', visits=session['visits'] )
 
 @app.route('/about')
 def about():
@@ -40,6 +44,39 @@ def search():
         else:
             flash(f'No results found for {query}')
     return render_template('search.html', query=query, results=results)
+
+@app.route('/add/<item>')
+def add_to_cart(item):
+    cart = session.get('cart', [])
+    cart.append(item)
+    session['cart'] = cart
+    return f'{item} append to the list. list now {cart}'
+
+@app.route('/cart')
+def view_cart():
+    cart = session.get('cart', [])
+    return render_template('cart.html', items=cart)
+
+@app.route('/shop-list')
+def shop_list():
+    cart = session.get('cart', [])
+    return render_template('shop_list.html', items=cart)
+
+@app.route('/clear-cart')
+def clear_cart():
+    session.pop('cart', None)
+    return '<h1>deleted shop List'
+
+@app.route('/set-theme/<theme>')
+def set_theme(theme):
+    response = make_response(f'change theme to {theme}')
+    response.set_cookie('theme', theme, max_age=60*60*24*30)
+    return response
+
+@app.route('/show_theme')
+def show_theme():
+    theme = request.cookies.get('theme', 'light')
+    return f'you theme:{theme}'
 
 @app.route('/subjects')
 def subjects():
