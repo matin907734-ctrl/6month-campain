@@ -7,6 +7,15 @@ app.secret_key = 'یک-رشته-تصادفی-و-مخفی'
 topics = ['Html', 'css', 'javascript', 'python']
 # products = ['book', 'mouse', 'headphone', 'pc']
 
+db = SQLAlchemy(app)
+class Task(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    done = db.Column(db.Boolean, default=False)
+    
+    def __repr__(self):
+        return f'<Task {self.title}>'
+
 @app.route('/')
 def home():
     session['visits'] = session.get('visits', 0) + 1
